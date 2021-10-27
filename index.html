@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="hud">
+        <!-- Chat -->
+        <div class="chat">
+            <div class="chat_main"></div>
+            <input class="chat_enter" placeholder="Напишите сообщение...">
+            <div class="chat_btn">
+                <div class="btn">/me</div>
+                <div class="btn">/do</div>
+                <div class="btn">/try</div>
+            </div>
+        </div>
+        <!-- End chat -->
+
+        <!-- Hotkey -->
+        <div class="hotkey">
+            <div class="hotkey-wrapper">
+                <div class="hotkey_btn">I</div>
+                <div class="hotkey_info">Инвентарь</div>
+            </div>
+            <div class="hotkey-wrapper">
+                <div class="hotkey_btn small">F10</div>
+                <div class="hotkey_info">Главное меню</div>
+            </div>
+            <div class="hotkey-wrapper">
+                <div class="hotkey_btn">M</div>
+                <div class="hotkey_info">Меню персонажа</div>
+            </div>
+            <div class="hotkey-wrapper">
+                <div class="hotkey_btn">^</div>
+                <div class="hotkey_info">Достать/убрать телефон</div>
+            </div>
+            <div class="hotkey-wrapper">
+                <div class="hotkey_btn">B</div>
+                <div class="hotkey_info">Микрофон</div>
+            </div>
+            <div class="hotkey-wrapper">
+                <div class="hotkey_btn">X</div>
+                <div class="hotkey_info">Пристегнуться</div>
+            </div>
+            <div class="hotkey-wrapper">
+                <div class="hotkey_btn">U</div>
+                <div class="hotkey_info">Меню анимация</div>
+            </div>
+        </div>
+        <!-- End Hotkey -->
+
+        <!-- Map -->
+        <div class="map">
+            <div class="map-wrapper">
+                <img src="./img/micro.svg" alt="">
+            </div>
+            <div class="map_main">
+                <div class="map_region">Палето-Бэй</div>
+                <div class="map-wrapper_street">
+                    <div class="map_icon">
+                        <img src="./img/map.svg" alt="">
+                    </div>
+                    <div class="map_street">Шоссе Грейт-Оушин</div>
+                </div>
+            </div>
+        </div>
+        <!-- End Map -->
+
+        <!-- Notify -->
+        <div class="notify">
+            <div class="notify_wrapper">
+                <div class="notify-succes cash">
+                    <div class="notify-icon">
+                        <img src="./img/cash.png" alt="">
+                    </div>
+                    <div class="notify-information">+ 999.999.999</div>
+                </div>
+                <div class="notify-cancel cash">
+                    <div class="notify-icon">
+                        <img src="./img/cash.png" alt="">
+                    </div>
+                    <div class="notify-information">- 999.999.999</div>
+                </div>
+                <div class="notify-succes main">
+                    <div id="notify_progressbar" class="green"></div>
+                    <div class="notify-icon">
+                        <img src="./img/succses.png" alt="">
+                    </div>
+                    <div class="notify-information">
+                        <div class="notify-title">УСПЕШНО</div>
+                        <div class="notify-text">Возможно успешно а возможно нет</div>
+                    </div>
+                </div>
+                <div class="notify-cancel main">
+                    <div id="notify_progressbar" class="red"></div>
+                    <div class="notify-icon">
+                        <img src="./img/cancel.png" alt="">
+                    </div>
+                    <div class="notify-information">
+                        <div class="notify-title">ОТКЛОНЕНО</div>
+                        <div class="notify-text">Возможно успешно а возможно нет</div>
+                    </div>
+                </div>
+                <div class="notify-info main">
+                    <div id="notify_progressbar" class="orange"></div>
+                    <div class="notify-icon">
+                        <img src="./img/info.png" alt="">
+                    </div>
+                    <div class="notify-information">
+                        <div class="notify-title">УВЕДОМЛЕНИЕ</div>
+                        <div class="notify-text">Возможно успешно а возможно нет</div>
+                    </div>
+                </div>
+            </div>
+            <button onclick="progressBar()" style="width: 300px; height: 20px;"></button>
+        </div>
+        <!-- End Notify -->
+
+        <!-- Logo & info -->
+        <div class="info">
+            <div class="info_logo">
+                <img src="./img/logo.png" alt="">
+            </div>
+            <div class="info_wrapper">
+                <div class="info_online">
+                    <div class="info_icon">
+                        <img src="./img/personal.svg" alt="">
+                    </div>
+                    <div class="info_count">999</div>
+
+                </div>
+                <div class="info_id">
+                    <div class="info_id_icon">ID:</div>
+                    <div class="info_count">512</div>
+                </div>
+            </div>
+        </div>
+        <!-- End Logo & info -->
+
+        <!-- Main block with info and other -->
+        <div class="main_block">
+            <!-- Alerts -->
+            <div class="alerts">
+                <div class="alerts_wrapper">
+                    <div class="alerts_icon aqua">
+                        <img src="./img/water.png" alt="">
+                    </div>
+                    <div class="alerts_icon pink">
+                        <img src="./img/cannabis.png" alt="">
+                    </div>
+                    <div class="alerts_icon green">
+                        <img src="./img/guard.png" alt="">
+                    </div>
+                </div>
+                <div class="alerts_wrapper">
+                    <div class="alerts_icon red">
+                        <img src="./img/blood.png" alt="">
+                    </div>
+                    <div class="alerts_icon yellow">
+                        <img src="./img/potato.png" alt="">
+                    </div>
+                    <div class="alerts_icon purple">
+                        <img src="./img/alko.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- End Alerts -->
+
+            <div class="second_block">
+                <!-- Speedometr -->
+                <div class="speedometr">
+                    <div class="speed_info">
+                        <div class="speed_info_wrapper">
+                            <div class="speed_count">100</div>
+                            <div class="speed_km">km/h</div>
+                        </div>
+                        <div class="speed_function">
+                            <div class="speed_engine">
+                                <div class="speed_icon">
+                                    <img src="./img/motor.png" alt="">
+                                </div>
+                                <div class="speed_event">ON</div>
+                            </div>
+                            <div class="speed_lock">
+                                <div class="speed_icon">
+                                    <img src="./img/lock.png" alt="">
+                                </div>
+                                <div class="speed_event">LOCKED</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speed_progress">
+                        <div class="speed_progress_status"></div>
+                    </div>
+                    <div class="speed_progress_fuel">
+                        <div class="speed_progress_fuel_status">
+                            <div class="speed_progress_fuel_bar"></div>
+                        </div>
+                        <div class="speed_fuel">100/100 L</div>
+                    </div>
+                </div>
+                <!-- End Speedometr -->
+
+                <!-- Infoblock -->
+                <div class="infoblock">
+                    <div class="infoblock_wrapper">
+                        <div class="infoblock_food_wrapper">
+                            <div class="infoblock_eat">
+                                <img src="./img/potato_small.png" alt="">
+                                <div class="infoblock_progress-bar">
+                                    <div class="infoblock_progress"></div>
+                                </div>
+                                <span class="yellow">30%</span>
+                            </div>
+                            <div class="infoblock_water">
+                                <img src="./img/water_small.png" alt="">
+                                <div class="infoblock_progress-bar">
+                                    <div class="infoblock_progress"></div>
+                                </div>
+                                <span class="aqua">30%</span>
+                            </div>
+                        </div>
+                        <div class="infoblock_wrapper-ammo">
+                            <img src="./img/ammo.svg" alt="">
+                            <div class="ammo">120</div>
+                        </div>
+                    </div>
+                    <div class="infoblock_main">
+                        <div class="infoblock_block">
+                            <img src="./img/wallet.png" alt="">
+                            <span>100.000.000</span>
+                        </div>
+                        <div class="infoblock_block">
+                            <img src="./img/coin.png" alt="">
+                            <span>100.000.000</span>
+                        </div>
+                        <div class="infoblock_block">
+                            <img src="./img/calendar.png" alt="">
+                            <span>19.08 13:17</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Infoblock -->
+
+            </div>
+        </div>
+        <!-- End Main block -->
+    </div>
+</body>
+<script src="./js/script.js"></script>
+
+</html>
